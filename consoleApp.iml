@@ -43,20 +43,5 @@
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20240303" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.plugins:maven-failsafe-plugin:3.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-api:3.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-logger-api:3.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-booter:3.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-extensions-spi:3.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-extensions-api:3.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-shared-utils:3.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:maven-surefire-common:3.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.resolver:maven-resolver-util:1.4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.resolver:maven-resolver-api:1.4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.shared:maven-common-artifact-filters:3.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />
-    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-java:1.2.0" level="project" />
-    <orderEntry type="library" name="Maven: org.ow2.asm:asm:9.6" level="project" />
-    <orderEntry type="library" name="Maven: com.thoughtworks.qdox:qdox:2.0.3" level="project" />
   </component>
 </module>
