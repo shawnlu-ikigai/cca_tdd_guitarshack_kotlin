@@ -1,0 +1,1 @@
+This is the base project for the GuitarShack TDD exercise. Fork this repo, invite your pairing partner(s) as collaborators, then all clone it to your local hard drive. It uses Maven for builds, and has a dummy unit test. Ensure it builds and that the dummy test passes before starting work.
