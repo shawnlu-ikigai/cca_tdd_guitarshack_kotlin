@@ -1,3 +1,5 @@
+package com.guitarshack
+
 import java.net.HttpURLConnection
 import java.net.URL
 import org.json.JSONObject
