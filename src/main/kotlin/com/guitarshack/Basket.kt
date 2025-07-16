@@ -2,7 +2,8 @@ package com.guitarshack
 
 class Basket(
   private val inventory: Inventory,
-  val items: MutableList<Guitars> = mutableListOf()
+  val items: MutableList<Guitars> = mutableListOf(),
+  var orderCost: Double = 0.0
 ) {
   fun addItem(guitar: Guitars) {
     items.add(guitar)
@@ -16,7 +17,13 @@ class Basket(
         throw IllegalStateException("Guitar $guitar is out of stock")
       }
     }
+    calcTotalCost(items)
     items.clear()
+  }
+
+  private fun calcTotalCost(items: List<Guitars>) {
+    val rawTotal = items.sumOf { it.price }
+    orderCost = String.format("%.2f", rawTotal).toDouble()
   }
 }
 
