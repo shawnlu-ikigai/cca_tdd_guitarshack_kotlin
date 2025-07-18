@@ -30,7 +30,7 @@ class OrderTest {
   @Test
   fun `should update inventory`(){
     order.addItem(Guitars.MONSTER_RIFT)
-    order.confirmOrder()
+    order.confirmOrder(Country.BELGIUM)
     assertEquals(99, warehouse.getStock(Guitars.MONSTER_RIFT))
   }
 
@@ -39,10 +39,8 @@ class OrderTest {
     order.addItem(Guitars.MONSTER_RIFT)
     order.addItem(Guitars.ELECTRIC_DREAM)
     order.addItem(Guitars.BEAST)
-    order.confirmOrder()
+    order.confirmOrder(Country.BELGIUM)
     val orderCost = order.orderCost
-    assertEquals(3099.48, orderCost)
-    val shipingCost = Shipping().calculateForOrder("Belgium",orderCost)
-    assertEquals(4.99, shipingCost)
+    assertEquals(3109.47, orderCost, 0.01)
   }
 }

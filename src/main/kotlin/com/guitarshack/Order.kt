@@ -9,7 +9,7 @@ class Order(
     items.add(guitar)
   }
 
-  fun confirmOrder() {
+  fun confirmOrder(country: Country) {
     for (guitar in items) {
       if (warehouse.getStock(guitar) > 0) {
         warehouse.removeItem(guitar, 1)
@@ -17,12 +17,13 @@ class Order(
         throw IllegalStateException("Guitar $guitar is out of stock")
       }
     }
-    calcTotalCost(items)
+    calcTotalCost(items, country)
     items.clear()
   }
 
-  private fun calcTotalCost(items: List<Guitars>) {
+  private fun calcTotalCost(items: List<Guitars>, country: Country) {
     val rawTotal = items.sumOf { it.price }
-    orderCost = String.format("%.2f", rawTotal).toDouble()
+    val shippingCost = Shipping().calculateForOrder(country.name, rawTotal)
+    orderCost += shippingCost + rawTotal
   }
 }
