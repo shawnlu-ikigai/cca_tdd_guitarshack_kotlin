@@ -1,7 +1,7 @@
 package com.guitarshack
 
-class Basket(
-  private val inventory: Inventory,
+class Order(
+  private val warehouse: Warehouse,
   val items: MutableList<Guitars> = mutableListOf(),
   var orderCost: Double = 0.0
 ) {
@@ -11,8 +11,8 @@ class Basket(
 
   fun confirmOrder() {
     for (guitar in items) {
-      if (inventory.getStock(guitar) > 0) {
-        inventory.removeItem(guitar, 1)
+      if (warehouse.getStock(guitar) > 0) {
+        warehouse.removeItem(guitar, 1)
       } else {
         throw IllegalStateException("Guitar $guitar is out of stock")
       }
