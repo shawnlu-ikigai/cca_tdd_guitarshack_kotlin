@@ -1,8 +1,10 @@
 package com.guitarshack
 
+import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 
 class WarehouseTest {
   lateinit var warehouse: Warehouse
@@ -27,5 +29,12 @@ class WarehouseTest {
   fun `add stock` () {
     warehouse.addStock(Guitars.BEAST, 100)
     assertEquals(200, warehouse.getStock(Guitars.BEAST))
+  }
+
+  @Test
+  fun `deduct more stock that is available` () {
+    assertThrows<OutOfStockException> {
+      warehouse.deductStock(Guitars.BEAST, 200)
+    }
   }
 }

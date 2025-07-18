@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
-class DummyTest {
+class OrderTest {
   lateinit var warehouse: Warehouse
   lateinit var order: Order
   @BeforeEach

@@ -21,6 +21,9 @@ class Warehouse(
 
   fun deductStock(guitar: Guitars, quantity: Int) {
     val currentStock = inventoryMap[guitar] ?: 0
+    if (currentStock < quantity) {
+      throw OutOfStockException()
+    }
     val newStock = (currentStock - quantity).coerceAtLeast(0)
     inventoryMap[guitar] = newStock
   }
