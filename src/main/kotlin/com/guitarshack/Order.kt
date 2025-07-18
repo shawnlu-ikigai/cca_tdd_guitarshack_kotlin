@@ -6,17 +6,11 @@ class Order(
   var orderCost: Double = 0.0
 ) {
   fun addItem(guitar: Guitars) {
+    warehouse.deductStock(guitar, 1)
     items.add(guitar)
   }
 
   fun confirmOrder(country: Country) {
-    for (guitar in items) {
-      if (warehouse.getStock(guitar) > 0) {
-        warehouse.removeItem(guitar, 1)
-      } else {
-        throw IllegalStateException("Guitar $guitar is out of stock")
-      }
-    }
     calcTotalCost(items, country)
     items.clear()
   }

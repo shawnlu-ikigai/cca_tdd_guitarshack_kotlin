@@ -3,6 +3,7 @@ package com.guitarshack
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import kotlin.test.assertEquals
 
 class OrderTest {
@@ -25,6 +26,16 @@ class OrderTest {
     order.addItem(Guitars.MONSTER_RIFT)
     assertEquals(1, order.items.size)
     assertEquals(Guitars.MONSTER_RIFT, order.items.get(0))
+  }
+
+  @Test
+  fun `add item out of stock`(){
+    warehouse.deductStock(Guitars.MONSTER_RIFT, 99)
+    assertTrue(order.items.isEmpty())
+    order.addItem(Guitars.MONSTER_RIFT)
+    assertThrows<OutOfStockException> {
+      order.addItem(Guitars.MONSTER_RIFT)
+    }
   }
 
   @Test
